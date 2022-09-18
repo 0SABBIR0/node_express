@@ -19,6 +19,8 @@ const os = require('os');
 //console.log(os.freemem());
 //console.log(os.cpus());
 
+/*
+//File system
 const fs = require('fs');
 fs.writeFileSync('First_file.html','Hello World');
 fs.appendFileSync('first_file.html', '\nWorld war');
@@ -29,3 +31,21 @@ fs.readFile('first_file.html',(err, data) => {
     console.log(data.toString());
 });
 console.log("Mummy");
+*/
+/*
+//Event
+*/
+const EvenEmitter = require('events');
+
+const emitter = new EvenEmitter();
+
+//add a listner for Tour Event
+emitter.on("Tour",() => {
+    console.log("Need to arrange a tour");
+});
+//set time to raise event
+setTimeout(()=>{
+    //Raise an event
+    emitter.emit("Tour");
+},3000);
+
