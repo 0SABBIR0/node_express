@@ -4,7 +4,7 @@ const { chunk } = require('lodash');
 const server = http.createServer((req, res) => {
     if(req.url === '/'){
         res.write('<html><head><title>Form</title></head><body></html>');
-        res.write('<body><form method="post" action="/process"><input type="text" ></form></body>');
+        res.write('<body><form method="post" action="/process"><input type="text" name = "txtFile"></form></body>');
         res.end();
     }
     else if(req.url ==='/process' && req.method ==='POST') {
